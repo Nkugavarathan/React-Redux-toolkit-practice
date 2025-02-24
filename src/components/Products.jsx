@@ -19,7 +19,10 @@ export default function Products() {
       product.description.split(" ").slice(0, 20).join(" ") + "..."
 
     return (
-      <div className="col-lg-3 col-md-4 col-sm-6 my-3" key={product.id}>
+      <div
+        className="col-lg-3 col-md-4 col-sm-6 my-3 d-flex justify-content-center"
+        key={product.id}
+      >
         <Card className="product-card">
           <Card.Img
             variant="top"
