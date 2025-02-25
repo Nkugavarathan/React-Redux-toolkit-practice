@@ -19,6 +19,7 @@ export default function Products() {
       product.description.split(" ").slice(0, 20).join(" ") + "..."
 
     return (
+      //React needs the key on the direct child of .map().
       <div
         className="col-lg-3 col-md-4 col-sm-6 my-3 d-flex justify-content-center"
         key={product.id}
@@ -33,8 +34,10 @@ export default function Products() {
           <Card.Body>
             <Card.Title>{product.title}</Card.Title>
             <Card.Text>{description}</Card.Text>
-            <Button variant="primary">Add to Cart</Button>
           </Card.Body>
+          <Card.Footer className="btn">
+            <Button variant="primary">Add to Cart</Button>
+          </Card.Footer>
         </Card>
       </div>
     )
@@ -46,3 +49,8 @@ export default function Products() {
     </div>
   )
 }
+
+/*
+[{"id":1,"title":"Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops","price":109.95,"description":"Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday","category":"men's clothing","image":"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg","rating":{"rate":3.9,"count":120}},
+
+*/
