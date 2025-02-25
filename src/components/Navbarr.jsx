@@ -11,7 +11,7 @@ function Navbarr() {
         <Navbar.Brand href="#">Redux Toolkit</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse>
-          <Nav.Link to="products" as={Link}>
+          <Nav.Link to="/" as={Link}>
             Products
           </Nav.Link>
         </Navbar.Collapse>
@@ -19,6 +19,8 @@ function Navbarr() {
         <Navbar.Collapse className="justify-content-end me-2">
           <Navbar.Text>
             <Nav.Link to="cart" as={Link}>
+              {/* // The "as" prop makes it render as a React Router Link component.
+              // This enables client-side navigation without a full page reload. */}
               My Bag 0
             </Nav.Link>
           </Navbar.Text>
