@@ -35,7 +35,10 @@ export default function Products() {
             <Card.Title>{product.title}</Card.Title>
             <Card.Text>{description}</Card.Text>
           </Card.Body>
-          <Card.Footer className="btn">
+          <Card.Footer
+            className="btn"
+            style={{ backgroundColor: "whitesmoke" }}
+          >
             <Button variant="primary">Add to Cart</Button>
           </Card.Footer>
         </Card>
