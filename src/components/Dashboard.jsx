@@ -8,3 +8,5 @@ export default function Dashboard() {
     </div>
   )
 }
+
+// npm install @reduxjs/toolkit
