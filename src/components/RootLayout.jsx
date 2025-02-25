@@ -6,7 +6,6 @@ export default function RootLayout() {
     <div>
       <Navbarr />
       <div>
-        {" "}
         <Outlet />
       </div>
     </div>
