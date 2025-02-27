@@ -7,12 +7,13 @@ import Navbar from "react-bootstrap/Navbar"
 
 function Navbarr() {
   const countProduct = useSelector((state) => state.cart)
+
   const [scrolled, setScrolled] = useState(false)
 
   // Handle the scroll event and change the navbar appearance
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
+      if (window.scrollY > 30) {
         setScrolled(true)
       } else {
         setScrolled(false)
@@ -42,9 +43,13 @@ function Navbarr() {
           </Nav>
         </Navbar.Collapse>
 
-        <Navbar.Collapse className="justify-content-end me-2">
+        <Navbar.Collapse className="justify-content-end me-2 cart">
           <Navbar.Text>
-            <Nav.Link as={Link} to="cart">
+            <Nav.Link
+              as={Link}
+              to="cart"
+              className={scrolled ? "text-white" : ""}
+            >
               {/* // The "as" prop makes it render as a React Router Link component.
               // This enables client-side navigation without a full page reload. */}
               My Bag {countProduct.length}

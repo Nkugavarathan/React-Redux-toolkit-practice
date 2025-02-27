@@ -26,7 +26,12 @@ padding: 10px;
 
 /* Smooth transition effect for navbar */
 .navbar {
-  transition: all 0.5s ease-in-out !important; /* Ensure transition applies */
+  transition: all 0.6s ease-in-out !important; /* Ensure transition applies */
+}
+
+/* Default navbar text color */
+.navbar-light .navbar-nav .nav-link {
+  color: #000 !important; /* Dark text color by default */
 }
 
 /* Add a sticky effect and shadow when scrolling */
@@ -38,10 +43,18 @@ padding: 10px;
   left: 0;
   width: 100%;
   z-index: 9999; /* Ensure it's on top */
-  
 }
 
+/* Change navbar text color when sticky (scrolling) */
+.navbar-sticky .navbar-nav .nav-link {
+  color: white !important; /* Change text color to white when sticky */
+}
 
+/* Change navbar background when scrolling */
+.navbar.bg-dark {
+  background-color: #343a40 !important; /* Dark background */
+  color: white; /* Ensure navbar text is white in sticky state */
+}
 
 /* On hover, change the navbar color */
 .navbar.btn-outline-light:hover {
@@ -49,6 +62,11 @@ padding: 10px;
 }
 
 /* Override Bootstrap's default navbar styles */
-.navbar.bg-dark {
-  background-color: #343a40 !important; /* Dark background */
+.navbar-light .navbar-brand {
+  color: #000 !important; /* Default color for navbar brand */
+}
+
+/* Change navbar brand text color when sticky */
+.navbar-sticky .navbar-brand{
+  color: white !important; /* Change brand text color to white on scroll */
 }
