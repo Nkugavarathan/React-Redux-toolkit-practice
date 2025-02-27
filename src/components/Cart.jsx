@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from "react-redux"
 import Button from "react-bootstrap/Button"
 import Card from "react-bootstrap/Card"
 import { remove } from "../store/cartSlice"
+import { FaCcVisa, FaCcMastercard, FaPaypal } from "react-icons/fa" // Import icons
+
 export default function Cart() {
   const productCart = useSelector((state) => state.cart)
 
@@ -66,9 +68,22 @@ export default function Cart() {
               <strong>Rs {totalAmount}</strong>
             </Card.Text>
 
-            {/* Display Payment Methods (simple text for now) */}
+            {/* Display Payment Methods with Icons */}
             <Card.Text>
-              <strong>Payment Methods:</strong> Credit Card, Debit Card, PayPal
+              <strong>Payment Methods:</strong>
+              <div className="payment-methods">
+                <FaCcVisa
+                  size={30}
+                  color="#0056b3"
+                  className="payment-icon  "
+                />
+                <FaCcMastercard
+                  size={30}
+                  color="#ff5f00"
+                  className="payment-icon "
+                />
+                <FaPaypal size={30} color="#003b5c" className="payment-icon " />
+              </div>
             </Card.Text>
 
             {/* Checkout Button */}

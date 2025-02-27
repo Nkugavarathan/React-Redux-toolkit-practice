@@ -70,3 +70,18 @@ padding: 10px;
 .navbar-sticky .navbar-brand{
   color: white !important; /* Change brand text color to white on scroll */
 }
+
+.payment-methods {
+  display: flex;
+  gap: 15px; /* Space out the icons */
+  margin-top: 10px;
+}
+
+.payment-icon {
+  cursor: pointer; /* Make the icons clickable, change cursor to pointer */
+  transition: transform 0.2s; /* Add hover effect */
+}
+
+.payment-icon:hover {
+  transform: scale(1.1); /* Scale up icons when hovered */
+}
