@@ -1,5 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit"
 
+//A slice is a mini Redux store with state and actions.
+
 const initialState = []
 const cartSlice = createSlice({
   name: "cart",

@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react"
 import Button from "react-bootstrap/Button"
 import Card from "react-bootstrap/Card"
+import { useDispatch } from "react-redux"
+import { add } from "../store/cartSlice"
+
 import "bootstrap/dist/css/bootstrap.min.css"
 
 export default function Products() {
@@ -19,6 +22,12 @@ export default function Products() {
 
   if (loading) {
     return <div>Loading...</div> // Your loader component can go here
+  }
+
+  const dispatch = useDispatch()
+  function addToCard(product) {
+    // dispatch an add action
+    dispatch(add(product))
   }
 
   const card = products.map((product) => {
@@ -47,7 +56,9 @@ export default function Products() {
             className="btn"
             style={{ backgroundColor: "whitesmoke" }}
           >
-            <Button variant="primary">Add to Cart</Button>
+            <Button variant="primary" onClick={() => addToCard(product)}>
+              Add to Cart
+            </Button>
           </Card.Footer>
         </Card>
       </div>
