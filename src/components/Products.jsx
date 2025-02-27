@@ -33,7 +33,7 @@ export default function Products() {
   const card = products.map((product) => {
     // Limit the description to 40 words
     const description =
-      product.description.split(" ").slice(0, 20).join(" ") + "..."
+      product.description.split(" ").slice(0, 10).join(" ") + "..."
 
     return (
       //React needs the key on the direct child of .map().
@@ -51,6 +51,7 @@ export default function Products() {
           <Card.Body>
             <Card.Title>{product.title}</Card.Title>
             <Card.Text>{description}</Card.Text>
+            <Card.Text> Price: Rs {product.price}</Card.Text>
           </Card.Body>
           <Card.Footer
             className="btn"
