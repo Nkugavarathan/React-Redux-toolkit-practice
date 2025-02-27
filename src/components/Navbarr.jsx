@@ -7,9 +7,30 @@ import Navbar from "react-bootstrap/Navbar"
 
 function Navbarr() {
   const countProduct = useSelector((state) => state.cart)
+  const [scrolled, setScrolled] = useState(false)
+
+  // Handle the scroll event and change the navbar appearance
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true)
+      } else {
+        setScrolled(false)
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll)
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
 
   return (
-    <Navbar>
+    <Navbar
+      className={`navbar ${scrolled ? "navbar-sticky bg-dark" : ""}`}
+      expand="lg"
+    >
       <Container fluid>
         <Navbar.Brand href="#">Redux Toolkit</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
