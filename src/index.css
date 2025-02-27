@@ -1,6 +1,6 @@
 .product-card .card-img {
   width: 80%;
-  height: 300px;
+  height: 200px;
   object-fit: cover;
   display: block;
   margin: 0 auto;
@@ -22,3 +22,24 @@ padding: 10px;
   overflow: hidden;
 }
 
+
+/* Default navbar */
+.navbar-custom {
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* Change background when scrolling */
+.navbar-custom.scrolled {
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+/* Hide navbar when scrolling down */
+.navbar-custom.hidden {
+  transform: translateY(-100%);
+}
