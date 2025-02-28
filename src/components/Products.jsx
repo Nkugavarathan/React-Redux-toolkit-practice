@@ -29,7 +29,13 @@ export default function Products() {
     // dispatch an add action
     dispatch(add(product))
   }
-
+  /*
+ Here’s What Happens:
+1️⃣ User clicks "Add to Cart".
+2️⃣ dispatch(add(product)) sends a message to Redux.
+3️⃣ Redux updates the cart with the new item.
+4️⃣ The app re-renders to show the updated cart.
+*/
   const card = products.map((product) => {
     // Limit the description to 40 words
     const description =

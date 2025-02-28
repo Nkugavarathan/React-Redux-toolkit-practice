@@ -53,6 +53,7 @@ function Navbarr() {
               {/* // The "as" prop makes it render as a React Router Link component.
               // This enables client-side navigation without a full page reload. */}
               My Bag {countProduct.length}
+              {/* countProduct.length displays the number of products in the cart. */}
             </Nav.Link>
           </Navbar.Text>
         </Navbar.Collapse>

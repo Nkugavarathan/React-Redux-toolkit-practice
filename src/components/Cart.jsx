@@ -7,17 +7,20 @@ import { FaCcVisa, FaCcMastercard, FaPaypal } from "react-icons/fa" // Import ic
 
 export default function Cart() {
   const productCart = useSelector((state) => state.cart)
-
-  const dispatch = useDispatch()
+  //useSelector reads the cart state from Redux.
+  // state.cart is an array of products in the cart.
+  const dispatch = useDispatch() //This initializes Redux dispatch so we can send actions to the store.
 
   const removeToCard = (productId) => {
     dispatch(remove(productId))
-  }
+  } //when the user clicks "Add to Cart", it dispatches an action to Redux.
 
-  // Calculate total price
-  const totalAmount = productCart.reduce((total, product) => {
-    return total + product.price
-  }, 0)
+  // calculate total amount
+  const totalAmount = productCart
+    .reduce((total, product) => {
+      return total + product.price
+    }, 0)
+    .toFixed(2)
 
   const card = productCart.map((product) => {
     // Limit the description to 40 words
@@ -40,7 +43,7 @@ export default function Cart() {
           <Card.Body>
             <Card.Title>{product.title}</Card.Title>
             <Card.Text>{description}</Card.Text>
-            <Card.Text> Price: Rs {product.price}</Card.Text>
+            <Card.Text> Price: Rs {product.price.toFixed(2)}</Card.Text>
           </Card.Body>
           <Card.Footer
             className="btn"
